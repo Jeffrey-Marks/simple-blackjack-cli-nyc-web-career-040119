@@ -44,6 +44,7 @@ def hit?(total)
   input = get_user_input
   if input == "s"
     compare_hands(total, rand(1..11) + rand(1..11))
+    total = 9999
   elsif input == "h"
     total += deal_card
     display_card_total(total)
@@ -66,9 +67,10 @@ end
 def runner
   welcome
   total = initial_round
-  
   while total <= 21
     total = hit?(total)
   end
-  end_game(total)
+  if total > 21 && total != 9999
+    end_game(total)
+  end
 end
