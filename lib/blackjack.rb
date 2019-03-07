@@ -31,6 +31,14 @@ def initial_round
   total
 end
 
+def compare_hands(your_hand, dealer_hand)
+  if your_hand > dealer_hand
+    puts "Dealer's total was #{dealer_hand}, you win!"
+  else
+    puts "Dealer's total was #{dealer_hand}, you lose..."
+  end
+end
+
 def hit?(total)
   prompt_user
   input = get_user_input
