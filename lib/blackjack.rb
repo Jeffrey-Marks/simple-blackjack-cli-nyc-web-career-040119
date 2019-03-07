@@ -44,7 +44,7 @@ def hit?(total)
   input = get_user_input
   if input == "s"
     display_card_total(total)
-    compare_hands(total, initial_round)
+    compare_hands(total, rand(1..11) + rand(1..11))
     break
   elsif input == "h"
     total += deal_card
